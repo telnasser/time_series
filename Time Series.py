@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np 
+import matplotlib.pyplot as plt
+
 
 df = pd.read_csv('LoanStats3b.csv', header=1, low_memory=False)
 
@@ -26,6 +28,15 @@ import statsmodels.api as sm
 
 
 loan_count_summary.plot()
-
+plt.show()
 
 year_month_summary.plot()
+plt.show()
+
+sm.graphics.tsa.plot_acf(loan_count_summary)
+plt.show()
+
+sm.graphics.tsa.plot_pacf(loan_count_summary)
+plt.show()
+
+#
